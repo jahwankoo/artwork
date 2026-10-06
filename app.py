@@ -3,7 +3,7 @@ import requests
 
 # 검색
 def search_artworks(query):
-    url = "https://collectionapi.metmuseum.org/public/collection/v1/search"
+    url = "https://collectionapi.metmuseum.org/public/collection/v1.1/search"
     params = {"q": query}
     response = requests.get(url, params=params)
     return response.json().get("objectIDs", [])[:10]
